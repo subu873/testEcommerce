@@ -9,6 +9,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
 import { AiOutlineProduct } from "react-icons/ai";
 import { IoIosSearch } from "react-icons/io";
+import { AiOutlineHome } from "react-icons/ai";
 
 const Header = () => {
   return (
@@ -33,7 +34,7 @@ const Header = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body className="align-items-center gap-5">
-            <Form className="w-75 mw-100 position-relative">
+            <Form className="nav-form">
               <IoIosSearch size={20} className="searchIcon" />
               <Form.Control
                 type="search"
@@ -42,7 +43,13 @@ const Header = () => {
                 aria-label="Search"
               />
             </Form>
-            <Nav className="justify-content-end align-items-center gap-4 flex-grow-1 pe-3">
+            <Nav className="">
+              <Nav.Link
+                href="#action2"
+                className="nav_link d-flex align-items-center gap-2 font-medium"
+              >
+                <AiOutlineHome size={25} /> Home
+              </Nav.Link>
               <Nav.Link
                 href="#action2"
                 className="nav_link d-flex align-items-center gap-2 font-medium"

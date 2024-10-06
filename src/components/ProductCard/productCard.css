@@ -24,7 +24,7 @@
 .products__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
   margin-block: 4rem;
 }
 .product__wrapper {
@@ -52,7 +52,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-bottom: 1.6rem;
+  margin-bottom: 0 !important;
 }
 
 .product__wrapper figure > a:first-child {
@@ -60,66 +60,34 @@
   height: 100%;
 }
 
-.product__wrapper figure a img {
+.product__wrapper a img {
   height: auto;
   width: 100%;
   transform: scale(1);
   transition: transform 0.3s ease-in-out;
 }
-.product__wrapper:hover figure a img {
-  transform: scale(1.25);
+.product__wrapper:hover a img {
+  transform: scale(1.15);
   transition: transform 0.3s ease-in-out;
   height: auto;
   width: 100%;
-}
-/* 
-.product__wrapper figure img:last-child {
-  opacity: 0;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  left: 0;
-} */
-
-/* .product__wrapper figure img:first-child {
-  opacity: 1;
-  position: relative;
-} */
-
-.product__wrapper .product_label_group {
-  position: absolute;
-  top: 0.8rem;
-  left: 0.8rem;
 }
 
 .product__wrapper .product_label {
   display: block;
   text-align: center;
-  margin-bottom: 5px;
   text-transform: uppercase;
-  padding: 5px 11px;
-  color: #fff;
+  color: #388e3c;
   font-weight: 600;
-  font-size: 10px;
-  line-height: 1;
-  border-radius: 12px;
+  font-size: 14px;
 }
-
+/* 
 .product__wrapper .product_label.label_sale {
   background-color: #da5555;
-}
+} */
 
 .product__wrapper .product_details {
-  display: flex;
-  display: -ms-flexbox;
-  padding: 0 0.8rem;
-  flex-direction: column;
-  -ms-flex-direction: column;
-  align-items: center;
-  -ms-flex-align: center;
-  justify-content: center;
-  -ms-flex-pack: center;
+  padding: 1rem 1.5rem;
 }
 
 .product__wrapper .category_wrap {
@@ -140,11 +108,11 @@
 
 .product__wrapper .product-title {
   max-width: 100%;
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
   text-decoration: none;
-  color: black;
+  color: rgb(77, 77, 77);
 }
 
 .product__wrapper .product-title a {
@@ -165,7 +133,6 @@
 
 .product__wrapper .product-action {
   position: relative;
-  margin-bottom: 1.5rem;
   color: #333;
   text-align: center;
 }
@@ -228,14 +195,14 @@
 }
 
 .product__wrapper .btn-add-cart {
-  display: inline-block;
-  padding: 0.25rem 1.4rem;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-align: center;
-  vertical-align: top;
+  padding: 0.25rem 1rem;
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .product__wrapper .btn-add-cart i {
@@ -272,10 +239,10 @@
 }
 
 .product__wrapper:hover .btn-add-cart {
-  background: var(--primary-color);
+  background: var(--primary-hover-color);
   border-color: var(--primary-color);
   color: #fff;
-  border-radius: 0.5rem;
+  border-radius: 5px;
 }
 
 .product__wrapper:hover .btn-add-cart.product-type-simple i {
@@ -307,7 +274,7 @@
 
 .old-price {
   text-decoration: line-through;
-  font-size: 1.25rem;
+  font-size: 1rem;
   letter-spacing: 0.005em;
   color: #999;
   margin-right: 3px;
@@ -321,9 +288,11 @@
 }
 
 .price-box {
-  margin-bottom: 1.4rem;
+  margin-bottom: 0.4rem;
   font-weight: 600;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .ratings-container {
@@ -337,19 +306,16 @@
 .ratings-container .product-ratings,
 .ratings-container .ratings {
   position: relative;
-  display: inline-block;
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  font-weight: 900;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 0;
 }
 
 .ratings-container .product-ratings {
   height: 11px;
-}
-
-.ratings-container .product-ratings:before {
-  content: "";
-  color: rgba(0, 0, 0, 0.16);
 }
 
 .ratings-container .product-ratings:hover .tooltiptext {
@@ -357,15 +323,12 @@
   opacity: 1;
 }
 
-.ratings-container .ratings {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
+.product_image_wrapper {
+  max-width: 100%;
+  height: 400px;
   overflow: hidden;
 }
-
-.ratings-container .ratings:before {
-  content: "";
-  color: #6a6a6d;
+.product_image_wrapper img {
+  width: 100%;
+  height: 100%;
 }

@@ -13,6 +13,7 @@
   align-items: center;
   padding: 2rem;
   gap: 2rem;
+  justify-self: center;
 }
 .benefit_block h4 {
   font-size: 1rem;
