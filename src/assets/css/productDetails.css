@@ -14,6 +14,8 @@
   display: block;
   width: 100%;
   max-width: none;
+  object-fit: cover;
+  object-position: top;
 }
 
 .product-single-gallery .product-single-grid {
@@ -60,7 +62,7 @@
   padding: 0 1px;
 }
 
-.prod-thumbnail > .owl-dot {
+.prod-thumbnail>.owl-dot {
   flex: 0 0 25%;
   max-width: 25%;
   padding: 4px;
@@ -160,6 +162,7 @@
 .thumb-image-block.active {
   border: 2px solid rgb(1, 136, 204);
 }
+
 .buy-now-btn {
   background-color: var(--primary-color);
   outline: none;
@@ -169,14 +172,22 @@
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
 }
+
 .buy-now-btn:hover {
   background-color: var(--primary-hover-color);
 }
+
 .product-desc h3 {
   font-size: 1.25rem;
   color: gray;
 }
+
 .product-desc p {
   font-size: 1rem;
   font-weight: 400;
+}
+
+.modal-dialog.modal-90w {
+  width: 90vw;
+  max-width: 90vw;
 }

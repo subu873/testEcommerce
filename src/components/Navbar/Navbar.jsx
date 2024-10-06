@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <Navbar expand="md" className="bg-white mb-3 shadow-sm nav__wrapper">
       <Container className="align-items-center">
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
           <div className="nav_logo_wrapper">
             <img src={navImage} alt="nav logo" />
           </div>
@@ -45,25 +45,19 @@ const Header = () => {
             </Form>
             <Nav className="">
               <Nav.Link
-                href="#action2"
+                href="/"
                 className="nav_link d-flex align-items-center gap-2 font-medium"
               >
                 <AiOutlineHome size={25} /> Home
               </Nav.Link>
               <Nav.Link
-                href="#action2"
+                href="#login"
                 className="nav_link d-flex align-items-center gap-2 font-medium"
               >
                 <FaRegUserCircle size={25} /> Login
               </Nav.Link>
-              {/* <Nav.Link
-                href="#action2"
-                className="nav_link d-flex align-items-center gap-2 font-medium"
-              >
-                <AiOutlineProduct size={25} /> Products
-              </Nav.Link> */}
               <Nav.Link
-                href="#action2"
+                href="#cart"
                 className="nav_link d-flex text-3xl align-items-center gap-2 font-medium"
               >
                 <LuShoppingCart size={25} /> Cart
