@@ -79,7 +79,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                         <div className="thumb-image-block active">
                           <img
                             class="product-single-image"
-                            src="https://portotheme.com/html/porto_ecommerce/assets/images/products/zoom/product-2-big.jpg"
+                            src={data?.imageUrl}
                             width="110"
                             height="110"
                             alt="product"
@@ -88,7 +88,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                         <div className="thumb-image-block">
                           <img
                             class="product-single-image"
-                            src="https://portotheme.com/html/porto_ecommerce/assets/images/products/zoom/product-2-big.jpg"
+                            src={data?.imageUrl}
                             width="110"
                             height="110"
                             alt="product"
@@ -97,7 +97,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                         <div className="thumb-image-block">
                           <img
                             class="product-single-image"
-                            src="https://portotheme.com/html/porto_ecommerce/assets/images/products/zoom/product-2-big.jpg"
+                            src={data?.imageUrl}
                             width="110"
                             height="110"
                             alt="product"
@@ -106,7 +106,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                         <div className="thumb-image-block">
                           <img
                             class="product-single-image"
-                            src="https://portotheme.com/html/porto_ecommerce/assets/images/products/zoom/product-2-big.jpg"
+                            src={data?.imageUrl}
                             width="110"
                             height="110"
                             alt="product"
