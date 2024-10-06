@@ -4,14 +4,17 @@ import { LuShoppingCart } from "react-icons/lu";
 import axios from "axios";
 import ProductCard from "../components/ProductCard/ProductCard";
 
-const ProductDetailModal = () => {
+export const INCREMENT_CART_ITEMS = "INCREMENT_CART_ITEMS"
+export const DECREMENT_CART_ITEMS = "DECREMENT_CART_ITEMS"
+
+const ProductDetailModal = ({ data }) => {
 
 
     const [cartCount, setCartCount] = useState(1)
     const [productsData, setProductsData] = useState([])
 
     const handleGetAllProducts = () => {
-        const apiPath = "https://dummyjson.com/products"
+        const apiPath = "https://dummyjson.com/products?limit=3"
         axios.get(apiPath)?.then((res) => {
             if (res?.status === 200) {
                 setProductsData(res?.data?.products)
@@ -21,9 +24,30 @@ const ProductDetailModal = () => {
         })
     }
 
+    const handleChangeCart = (value) => {
+        console.log("value", value)
+        if (value === INCREMENT_CART_ITEMS) {
+            setCartCount((prev) => prev + 1)
+        } else if (value === DECREMENT_CART_ITEMS) {
+            if (cartCount === 1) return
+            setCartCount((prev) => prev - 1)
+        } else {
+            setCartCount(value)
+        }
+    }
+
+    const handleAddToCart = () => {
+        let targetData = {
+            cartItemCount: cartCount,
+            ...data
+        }
+        localStorage.setItem("cart_items", JSON.stringify(targetData))
+    }
+
     useEffect(() => {
         handleGetAllProducts()
     }, [])
+
 
 
     return (
@@ -101,16 +125,27 @@ const ProductDetailModal = () => {
                                 <div class="product-action">
                                     <div className="product-count-block">
                                         <div class="input-group">
-                                            <button class="btn-decrement count-btn">-</button>
+                                            <button class="btn-decrement count-btn"
+                                                onClick={() => handleChangeCart(DECREMENT_CART_ITEMS)}>
+                                                -
+                                            </button>
                                             <input type="number"
                                                 class="horizontal-quantity form-control quantity-input"
-                                                value="1" min="1" max="10" />
-                                            <button class="btn-increment count-btn">+</button>
+                                                value={cartCount}
+                                                min="1"
+                                                onChange={(e) => handleChangeCart(e?.target?.value)}
+                                            />
+                                            <button class="btn-increment count-btn"
+                                                onClick={() => handleChangeCart(INCREMENT_CART_ITEMS)}>
+                                                +
+                                            </button>
                                         </div>
                                     </div>
 
-                                    <button className="btn btn-primary">
-                                        <LuShoppingCart size={25} />    Add to Cart
+                                    <button className="btn btn-primary"
+                                        onClick={handleAddToCart}>
+                                        <LuShoppingCart size={25} />
+                                        Add to Cart
                                     </button>
 
                                 </div>
