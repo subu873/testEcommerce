@@ -6,6 +6,8 @@ import ProductCard from "../components/ProductCard/ProductCard";
 
 const ProductDetailModal = () => {
 
+
+    const [cartCount, setCartCount] = useState(1)
     const [productsData, setProductsData] = useState([])
 
     const handleGetAllProducts = () => {
@@ -28,7 +30,7 @@ const ProductDetailModal = () => {
         <Fragment>
             <div className="container mt-5 pt-5">
                 <div className="card bg-white">
-                    <div class="product-single-container product-single-default mt-4">
+                    <div class="product-single-container product-single-default">
                         <div class="row">
                             <div class="col-lg-5 col-md-6 product-single-gallery">
                                 <div class="product-slider-container">
@@ -100,7 +102,9 @@ const ProductDetailModal = () => {
                                     <div className="product-count-block">
                                         <div class="input-group">
                                             <button class="btn-decrement count-btn">-</button>
-                                            <input type="number" class="horizontal-quantity form-control quantity-input" value="1" min="1" max="10" />
+                                            <input type="number"
+                                                class="horizontal-quantity form-control quantity-input"
+                                                value="1" min="1" max="10" />
                                             <button class="btn-increment count-btn">+</button>
                                         </div>
                                     </div>
