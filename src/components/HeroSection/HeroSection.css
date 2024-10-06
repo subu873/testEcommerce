@@ -11,3 +11,33 @@
   height: 100%;
   object-fit: cover;
 }
+.carousel-caption {
+  position: static !important;
+  text-align: left !important;
+  padding-left: 10rem !important;
+}
+.carousel-caption h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.carousel-caption p {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.hero_btn {
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.hero_btn:hover {
+  background-color: var(--primary-hover-color);
+}

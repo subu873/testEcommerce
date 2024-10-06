@@ -24,3 +24,9 @@
 .nav_link:hover {
   color: var(--primary-color) !important;
 }
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -23,7 +23,7 @@
 }
 .products__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 1rem;
   margin-block: 4rem;
 }
@@ -140,15 +140,16 @@
 
 .product__wrapper .product-title {
   max-width: 100%;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.35;
-  letter-spacing: 0.005em;
+  font-weight: 600;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+  text-decoration: none;
+  color: black;
 }
 
 .product__wrapper .product-title a {
   display: block;
+  text-decoration: none;
 }
 
 .product__wrapper .title-wrap .product-title {
@@ -176,6 +177,7 @@
   background: #f4f4f4;
   color: #6f6e6b;
   line-height: 34px;
+  text-decoration: none;
 }
 
 .product__wrapper .btn-icon-wish,

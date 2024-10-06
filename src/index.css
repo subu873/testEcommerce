@@ -13,8 +13,18 @@ code {
     monospace;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+}
 :root {
-  --primary-color: #ca252b;
+  --primary-color: #1d70ba;
+  --primary-hover-color: #0b3a63;
 }
 
 .font-regular {

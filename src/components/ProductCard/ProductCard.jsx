@@ -14,20 +14,22 @@ const ProductCard = ({ data }) => {
           />
         </a>
         <div className="product_label_group">
-          <div className="product_label label_sale">-{data?.discountPercentage}%</div>
+          <div className="product_label label_sale">
+            -{data?.discountPercentage}%
+          </div>
         </div>
       </figure>
 
       <div className="product_details">
         <h3 className="product-title">
-          <a href="/">
-            {data?.title}
-          </a>
+          <a href="/">{data?.title}</a>
         </h3>
 
         <div className="price-box">
-          <span className="old-price">${data?.price}</span>
-          <span className="product-price">$70.00</span>
+          <span className="old-price">${data.price}</span>
+          <span className="product-price">
+            ${((data.price * (100 - data.discountPercentage)) / 100).toFixed(2)}
+          </span>
         </div>
         <div className="product-action">
           <a href="#" className="btn-icon btn-add-cart product-type-simple">

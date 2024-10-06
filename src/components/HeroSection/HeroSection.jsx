@@ -1,21 +1,54 @@
 import "./HeroSection.css";
 import Carousel from "react-bootstrap/Carousel";
-import image1 from "../../assets/prodImage1.jpg";
-import image2 from "../../assets/prodImage2.jpg";
-import image3 from "../../assets/prodImage3.jpg";
-import image4 from "../../assets/prodImage4.jpg";
-import image5 from "../../assets/prodImage5.jpg";
-import image6 from "../../assets/prodImage6.jpg";
+import image1 from "../../assets/prodImage1.png";
+import image2 from "../../assets/prodImage2.png";
+import image4 from "../../assets/prodImage4.png";
+import image5 from "../../assets/prodImage5.png";
 
 const HeroSection = () => {
+  const data = [
+    {
+      title: "Discover amazing deals in skincare ",
+      description: "Flat 60% OFF",
+      image: image1,
+      color: "linear-gradient(0deg, #dea16c, #cb8955)",
+    },
+    {
+      title: "Prices you've never seen before",
+      description: "Upto 25% OFF",
+      image: image2,
+      color: "linear-gradient(0deg, #dea16c, #c98852)",
+    },
+    {
+      title: "Save on every purchase",
+      description: "Flat 70% OFF",
+      image: image4,
+      color: "linear-gradient(0deg, #005377, #004969)",
+    },
+    {
+      title: "Latest product at lowest prices",
+      description: "Starting 499/-",
+      image: image5,
+      color: "linear-gradient(0deg, #7d99a5, #90adbb)",
+    },
+  ];
+
   return (
     <div className="hero_section_wrapper">
       <Carousel fade controls indicators keyboard slide={true}>
-        {[image1, image2, image3, image4, image5, image6].map((item) => {
+        {data.map((item) => {
           return (
-            <Carousel.Item>
-              <div className="hero_section_img_wrapper">
-                <img src={item} alt="image for slide" />
+            <Carousel.Item style={{ background: item.color }}>
+              <div className="d-flex justify-content-between gap-5 align-items-center">
+                <Carousel.Caption>
+                  <h3 className="mb-1">{item.title}</h3>
+                  <p className="mb-2">{item.description}</p>
+                  <button className=" hero_btn">Shop Now</button>
+                </Carousel.Caption>
+                {/* <h1>{item.title}</h1> */}
+                <div className="hero_section_img_wrapper">
+                  <img src={item.image} alt="image for slide" />
+                </div>
               </div>
             </Carousel.Item>
           );

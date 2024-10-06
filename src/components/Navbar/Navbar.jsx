@@ -8,11 +8,12 @@ import navImage from "../../assets/navbarLogo.png";
 import { FaRegUserCircle } from "react-icons/fa";
 import { LuShoppingCart } from "react-icons/lu";
 import { AiOutlineProduct } from "react-icons/ai";
+import { IoIosSearch } from "react-icons/io";
 
 const Header = () => {
   return (
     <Navbar expand="md" className="bg-white mb-3 shadow-sm nav__wrapper">
-      <Container fluid className="align-items-center">
+      <Container className="align-items-center">
         <Navbar.Brand href="#">
           <div className="nav_logo_wrapper">
             <img src={navImage} alt="nav logo" />
@@ -32,11 +33,12 @@ const Header = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body className="align-items-center gap-5">
-            <Form className="w-75 mw-100">
+            <Form className="w-75 mw-100 position-relative">
+              <IoIosSearch size={20} className="searchIcon" />
               <Form.Control
                 type="search"
-                placeholder="Search"
-                className="me-2 p-2"
+                placeholder="Search for brands or products"
+                className="me-2 p-2 ps-5"
                 aria-label="Search"
               />
             </Form>
