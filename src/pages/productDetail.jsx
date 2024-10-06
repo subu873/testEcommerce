@@ -5,13 +5,14 @@ import axios from "axios";
 import ProductCard from "../components/ProductCard/ProductCard";
 import { FaRegHeart, FaStar } from "react-icons/fa";
 import { MdOutlineShoppingBag } from "react-icons/md";
+import { SAMPLE_PRODUCTS } from "../utils/sampleProducts";
 
 export const INCREMENT_CART_ITEMS = "INCREMENT_CART_ITEMS";
 export const DECREMENT_CART_ITEMS = "DECREMENT_CART_ITEMS";
 
 const ProductDetailModal = ({ data }) => {
   const [cartCount, setCartCount] = useState(1);
-  const [productsData, setProductsData] = useState([]);
+  const [productsData, setProductsData] = useState(SAMPLE_PRODUCTS);
 
   const handleGetAllProducts = () => {
     const apiPath = "https://dummyjson.com/products?limit=3";
@@ -48,7 +49,7 @@ const ProductDetailModal = ({ data }) => {
   };
 
   useEffect(() => {
-    handleGetAllProducts();
+    // handleGetAllProducts();
   }, []);
 
   return (
