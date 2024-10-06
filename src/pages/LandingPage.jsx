@@ -3,12 +3,14 @@ import ProductCard from "../components/ProductCard/ProductCard";
 import HeroSection from "../components/HeroSection/HeroSection";
 import Benefits from "../components/Benefits/Benefits";
 import axios from "axios";
+import { SAMPLE_PRODUCTS } from "../utils/sampleProducts";
+
 
 const LandingPage = () => {
-  const [productsData, setProductsData] = useState([]);
+  const [productsData, setProductsData] = useState(SAMPLE_PRODUCTS);
 
   const handleGetAllProducts = () => {
-    const apiPath = "https://dummyjson.com/products";
+    const apiPath = "https://www.nykaafashion.com/rest/appapi/V2/categories/products?PageSize=36&filter_format=v2&apiVersion=5&currency=INR&country_code=IN&deviceType=WEBSITE&sort=popularity&device_os=desktop&categoryId=10&currentPage=1&brand_filter=4315";
     axios
       .get(apiPath)
       ?.then((res) => {
@@ -22,7 +24,7 @@ const LandingPage = () => {
   };
 
   useEffect(() => {
-    handleGetAllProducts();
+    // handleGetAllProducts();
   }, []);
 
   return (
@@ -34,7 +36,7 @@ const LandingPage = () => {
         <div className="products__grid">
           {!!productsData &&
             productsData.length > 0 &&
-            productsData?.slice(0, 8)?.map((item, index) => {
+            productsData?.slice(0, 20)?.map((item, index) => {
               return <ProductCard data={item} key={item?.id} />;
             })}
         </div>
