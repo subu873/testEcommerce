@@ -1,7 +1,7 @@
 footer {
   position: relative;
   margin-top: 300px;
-  padding: 2rem 0 1.5rem;
+  padding: 5rem 0 2rem;
   color: #fff;
   background: #000;
   margin-top: auto;
@@ -44,7 +44,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding-left: 1rem;
+  padding-left: 0;
 }
 
 .footer__copyrights {
@@ -120,5 +120,8 @@ footer {
   .footer__copyrights {
     padding-top: 1rem;
     margin-top: 1rem;
+  }
+  .newsletter form {
+    flex-direction: column;
   }
 }

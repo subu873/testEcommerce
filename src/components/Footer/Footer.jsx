@@ -7,14 +7,14 @@ export const SOCIAL_ICONS = [
   { title: "Instagram", target: "https://www.instagram.com" },
   { title: "Twitter", target: "https://www.twitter.com" },
   { title: "Reddit", target: "https://www.reddit.com" },
-]
+];
 
 export const SUPPORT_MENU_OPTIONS = [
   { title: "Customer Service", target: "/" },
   { title: "Returns & Refunds", target: "/" },
   { title: "Shipping Info", target: "/" },
   { title: "FAQ", target: "/" },
-]
+];
 
 const Footer = () => {
   return (
@@ -28,23 +28,22 @@ const Footer = () => {
             <h3 className="footer__col-description">
               Make your shopping easy with ShopEase,
             </h3>
-
-
           </div>
 
           <div className="footer__col">
             <h3 className="footer__col-title">Help & Support</h3>
             <nav className="footer__nav">
               <ul className="footer__nav-list">
-                {!!SUPPORT_MENU_OPTIONS && SUPPORT_MENU_OPTIONS?.map((support) => {
-                  return (
-                    <li className="footer__nav-item">
-                      <Link to={support?.target} className="footer__nav-link">
-                        {support?.title}
-                      </Link>
-                    </li>
-                  )
-                })}
+                {!!SUPPORT_MENU_OPTIONS &&
+                  SUPPORT_MENU_OPTIONS?.map((support) => {
+                    return (
+                      <li className="footer__nav-item">
+                        <Link to={support?.target} className="footer__nav-link">
+                          {support?.title}
+                        </Link>
+                      </li>
+                    );
+                  })}
               </ul>
             </nav>
           </div>
@@ -52,15 +51,20 @@ const Footer = () => {
           <div className="footer__col">
             <h3 className="footer__col-title">Socials</h3>
             <ul className="footer__nav-list">
-              {!!SOCIAL_ICONS && SOCIAL_ICONS?.map((social) => {
-                return (
-                  <li className="footer__nav-item">
-                    <a href={social?.target} target="_blank" className="footer__nav-link">
-                      {social?.title}
-                    </a>
-                  </li>
-                )
-              })}
+              {!!SOCIAL_ICONS &&
+                SOCIAL_ICONS?.map((social) => {
+                  return (
+                    <li className="footer__nav-item">
+                      <a
+                        href={social?.target}
+                        target="_blank"
+                        className="footer__nav-link"
+                      >
+                        {social?.title}
+                      </a>
+                    </li>
+                  );
+                })}
             </ul>
           </div>
           <div className="footer__col footer-section newsletter">

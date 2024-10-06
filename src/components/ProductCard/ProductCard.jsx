@@ -1,6 +1,6 @@
 import "./productCard.css";
 import { MdOutlineShoppingBag } from "react-icons/md";
-import { FaStar } from "react-icons/fa";
+import { FaRegHeart, FaStar } from "react-icons/fa";
 
 const ProductCard = ({ data }) => {
   return (
@@ -39,6 +39,9 @@ const ProductCard = ({ data }) => {
           </p>
         </div>
         <div className="product-action">
+          <a href="#" className="btn-icon btn-wishlist product-type-simple">
+            <FaRegHeart size={15} /> Wishlist
+          </a>
           <a href="#" className="btn-icon btn-add-cart product-type-simple">
             <MdOutlineShoppingBag size={15} /> Add to cart
           </a>

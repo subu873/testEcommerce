@@ -23,8 +23,8 @@ p {
   margin-bottom: 0;
 }
 :root {
-  --primary-color: #1d70ba;
-  --primary-hover-color: #0b3a63;
+  --primary-hover-color: #1d70ba;
+  --primary-color: #0b3a63;
 }
 
 .font-regular {

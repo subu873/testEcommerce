@@ -4,6 +4,7 @@ import image1 from "../../assets/prodImage1.png";
 import image2 from "../../assets/prodImage2.png";
 import image4 from "../../assets/prodImage4.png";
 import image5 from "../../assets/prodImage5.png";
+import { IoBagOutline } from "react-icons/io5";
 
 const HeroSection = () => {
   const data = [
@@ -43,7 +44,10 @@ const HeroSection = () => {
                 <Carousel.Caption>
                   <h3 className="mb-1">{item.title}</h3>
                   <p className="mb-2">{item.description}</p>
-                  <button className=" hero_btn">Shop Now</button>
+                  <button className=" hero_btn">
+                    <IoBagOutline />
+                    SHOP NOW
+                  </button>
                 </Carousel.Caption>
                 {/* <h1>{item.title}</h1> */}
                 <div className="hero_section_img_wrapper">
