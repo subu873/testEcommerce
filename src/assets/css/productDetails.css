@@ -1,3 +1,7 @@
+.product-single-container {
+    padding: 25px;
+}
+
 .product-single-gallery {
     margin-bottom: 3.3rem
 }
@@ -145,8 +149,6 @@
 .produt-thumb {
     display: grid;
     margin-top: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
     gap: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -155,6 +157,7 @@
     border: 2px solid white;
     cursor: pointer;
 }
+
 
 .thumb-image-block.active {
     border: 2px solid rgb(1, 136, 204)
