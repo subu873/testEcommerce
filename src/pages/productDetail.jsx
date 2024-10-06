@@ -154,36 +154,36 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
                   </button> */}
                   </div>
 
-                  {/* <div class="product-action">
-                  <div className="product-count-block">
-                    <div class="input-group">
-                      <button
-                        class="btn-decrement count-btn"
-                        onClick={() => handleChangeCart(DECREMENT_CART_ITEMS)}
-                      >
-                        -
-                      </button>
-                      <input
-                        type="number"
-                        class="horizontal-quantity form-control quantity-input"
-                        value={cartCount}
-                        min="1"
-                        onChange={(e) => handleChangeCart(e?.target?.value)}
-                      />
-                      <button
-                        class="btn-increment count-btn"
-                        onClick={() => handleChangeCart(INCREMENT_CART_ITEMS)}
-                      >
-                        +
-                      </button>
+                  <div class="product-action">
+                    <div className="product-count-block">
+                      <div class="input-group">
+                        <button
+                          class="btn-decrement count-btn"
+                          onClick={() => handleChangeCart(DECREMENT_CART_ITEMS)}
+                        >
+                          -
+                        </button>
+                        <input
+                          type="number"
+                          class="horizontal-quantity form-control quantity-input"
+                          value={cartCount}
+                          min="1"
+                          onChange={(e) => handleChangeCart(e?.target?.value)}
+                        />
+                        <button
+                          class="btn-increment count-btn"
+                          onClick={() => handleChangeCart(INCREMENT_CART_ITEMS)}
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
-                  </div>
 
-                  <button className="btn btn-primary" onClick={handleAddToCart}>
-                    <LuShoppingCart size={25} />
-                    Add to Cart
-                  </button>
-                </div> */}
+                    <button className="btn btn-primary" onClick={handleAddToCart}>
+                      <LuShoppingCart size={25} />
+                      Add to Cart
+                    </button>
+                  </div>
                   <hr class="divider" />
                 </div>
               </div>
@@ -194,7 +194,7 @@ const ProductDetailModal = ({ show, handleClose, data }) => {
               <div className="products__grid">
                 {!!productsData &&
                   productsData.length > 0 &&
-                  productsData?.slice(0, 9)?.map((item, index) => {
+                  productsData?.slice(0, 3)?.map((item, index) => {
                     return <ProductCard data={item} key={item?.id} />;
                   })}
               </div>

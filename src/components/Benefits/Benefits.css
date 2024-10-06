@@ -52,7 +52,7 @@
   }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1024px) {
+@media screen and (min-width: 992px) and (max-width: 1200px) {
   .benefit__grid {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
