@@ -33,7 +33,7 @@ const Header = () => {
               </div>
             </Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body className="align-items-center gap-5">
+          <Offcanvas.Body className="align-items-center justify-content-between gap-5">
             <Form className="nav-form">
               <IoIosSearch size={20} className="searchIcon" />
               <Form.Control
@@ -56,12 +56,12 @@ const Header = () => {
               >
                 <FaRegUserCircle size={25} /> Login
               </Nav.Link>
-              <Nav.Link
+              {/* <Nav.Link
                 href="#action2"
                 className="nav_link d-flex align-items-center gap-2 font-medium"
               >
                 <AiOutlineProduct size={25} /> Products
-              </Nav.Link>
+              </Nav.Link> */}
               <Nav.Link
                 href="#action2"
                 className="nav_link d-flex text-3xl align-items-center gap-2 font-medium"

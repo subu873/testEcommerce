@@ -3,7 +3,7 @@
 }
 .benefit__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 1.25rem;
   /* margin-block: 3rem; */
 }
@@ -13,7 +13,7 @@
   align-items: center;
   padding: 2rem;
   gap: 2rem;
-  justify-self: center;
+  justify-content: center;
 }
 .benefit_block h4 {
   font-size: 1rem;
@@ -26,4 +26,28 @@
   font-weight: 400;
   color: gray;
   margin-bottom: 0;
+}
+@media screen and (max-width: 600px) {
+  .benefit_block {
+    padding: 1rem;
+  }
+  .benefit__grid {
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 767px) {
+  .benefit_block {
+    padding: 1rem;
+  }
+  .benefit__grid {
+    gap: 10px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .benefit_block {
+    padding: 1rem;
+  }
+  .benefit__grid {
+    gap: 10px;
+  }
 }

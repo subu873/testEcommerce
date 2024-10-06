@@ -5,12 +5,12 @@ import Benefits from "../components/Benefits/Benefits";
 import axios from "axios";
 import { SAMPLE_PRODUCTS } from "../utils/sampleProducts";
 
-
 const LandingPage = () => {
   const [productsData, setProductsData] = useState(SAMPLE_PRODUCTS);
 
   const handleGetAllProducts = () => {
-    const apiPath = "https://www.nykaafashion.com/rest/appapi/V2/categories/products?PageSize=36&filter_format=v2&apiVersion=5&currency=INR&country_code=IN&deviceType=WEBSITE&sort=popularity&device_os=desktop&categoryId=10&currentPage=1&brand_filter=4315";
+    const apiPath =
+      "https://www.nykaafashion.com/rest/appapi/V2/categories/products?PageSize=36&filter_format=v2&apiVersion=5&currency=INR&country_code=IN&deviceType=WEBSITE&sort=popularity&device_os=desktop&categoryId=10&currentPage=1&brand_filter=4315";
     axios
       .get(apiPath)
       ?.then((res) => {
