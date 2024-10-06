@@ -10,26 +10,16 @@ import { SAMPLE_PRODUCTS } from "../utils/sampleProducts";
 export const INCREMENT_CART_ITEMS = "INCREMENT_CART_ITEMS";
 export const DECREMENT_CART_ITEMS = "DECREMENT_CART_ITEMS";
 
-const ProductDetailModal = ({ data }) => {
+const ProductDetailModal = () => {
+
+  const data = SAMPLE_PRODUCTS[0]
+
+  console.log("data", data)
+
   const [cartCount, setCartCount] = useState(1);
   const [productsData, setProductsData] = useState(SAMPLE_PRODUCTS);
 
-  const handleGetAllProducts = () => {
-    const apiPath = "https://dummyjson.com/products?limit=3";
-    axios
-      .get(apiPath)
-      ?.then((res) => {
-        if (res?.status === 200) {
-          setProductsData(res?.data?.products);
-        }
-      })
-      ?.catch((err) => {
-        console.error("Failed to get data");
-      });
-  };
-
   const handleChangeCart = (value) => {
-    console.log("value", value);
     if (value === INCREMENT_CART_ITEMS) {
       setCartCount((prev) => prev + 1);
     } else if (value === DECREMENT_CART_ITEMS) {
@@ -48,9 +38,6 @@ const ProductDetailModal = ({ data }) => {
     localStorage.setItem("cart_items", JSON.stringify(targetData));
   };
 
-  useEffect(() => {
-    // handleGetAllProducts();
-  }, []);
 
   return (
     <Fragment>
@@ -61,14 +48,15 @@ const ProductDetailModal = ({ data }) => {
               <div class="col-lg-5 col-md-6 product-single-gallery">
                 <div class="product-slider-container">
                   <div class="label-group">
-                    <div class="product-label label-hot">HOT</div>
-                    <div class="product-label label-sale">-16%</div>
+                    <div class="product-label label-sale">
+                      {data?.discount}% off
+                    </div>
                   </div>
                   <div class="product-single">
                     <div class="product-item">
                       <img
                         class="product-single-image"
-                        src="https://portotheme.com/html/porto_ecommerce/assets/images/products/zoom/product-2-big.jpg"
+                        src={data?.imageUrl}
                         width="468"
                         height="468"
                         alt="product"
@@ -117,8 +105,12 @@ const ProductDetailModal = ({ data }) => {
               </div>
 
               <div class="col-lg-7 col-md-6 product-single-details">
-                <h1 class="product-title">Men Black Sports Shoes</h1>
-                {/* <hr class="short-divider" /> */}
+                <h1 class="product-title">{data?.title}</h1>
+                <div class="product-desc">
+                  <p>
+                    {data?.subTitle}
+                  </p>
+                </div>
                 <div className="ratings-container">
                   <p className="ratings">
                     <FaStar size={15} /> 4.5
@@ -126,20 +118,19 @@ const ProductDetailModal = ({ data }) => {
                   </p>
                 </div>
                 <div class="price-box mb-4">
-                  <span class="new-price">$1,699.00</span>
-                  <span class="old-price">$1,999.00</span>
+                  <span class="new-price"> ₹{data?.discountedPrice}</span>
+                  <span class="old-price"> ₹{data?.price}</span>
                 </div>
 
-                <div class="product-desc">
-                  <h3>Product Highlights:</h3>
-                  <p>
-                    Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas. Vestibulum tortor quam,
-                    feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
-                    eu libero sit amet quam egestas semper. Aenean ultricies mi
-                    vitae est. Mauris placerat eleifend leo.
-                  </p>
+                <div className="color-container">
+                  {!!data?.sibling_colour_codes && data?.sibling_colour_codes?.map((color) => {
+                    return (
+                      <div className="circle" style={{ background: color }} ></div>
+                    )
+                  })}
                 </div>
+
+
                 <div className="d-flex gap-3">
                   <button className="w-100 buy-now-btn">
                     <MdOutlineShoppingBag size={25} /> Add to Cart
@@ -197,7 +188,7 @@ const ProductDetailModal = ({ data }) => {
           </div>
         </div>
       </div>
-    </Fragment>
+    </Fragment >
   );
 };
 
